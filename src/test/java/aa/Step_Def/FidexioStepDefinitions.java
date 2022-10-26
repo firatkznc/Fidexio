@@ -90,8 +90,7 @@ public class FidexioStepDefinitions {
     }
     @Then("user go to the main page")
     public void user_go_to_the_main_page() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        Assert.assertEquals(Driver.getDriver().getTitle(),"#Inbox - Odoo");
     }
 
 
