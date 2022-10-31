@@ -1,4 +1,4 @@
-@smoke
+@FIDE-1449
 Feature: Login Functionality
 
   1-Users can log in with valid credentials (We have 5 types of users but will test only 2 user: PosManager, SalesManager)
@@ -14,7 +14,7 @@ Feature: Login Functionality
   Background: For the scenarios in feature file, user is expected to be on login page
     Given user is on the library login page
 
-  @AC1
+  @FIDE-1444
   Scenario Outline: Login with valid credentials.(2 user: PosManager, SalesManager)
     When "<user type>" enters username
     And user type enters "<password>"
@@ -28,7 +28,7 @@ Feature: Login Functionality
       | salesmanager7@info.com  | salesmanager | SalesManager7  |
       | salesmanager17@info.com | salesmanager | SalesManager17 |
 
-  @AC2
+  @FIDE-1445
   Scenario Outline:  "Wrong login/password" should be displayed for invalid credentials
     When "<user type>" enters username
     And  user type enters "<password>"
@@ -42,7 +42,7 @@ Feature: Login Functionality
       | fener1907@info.com      | salesmanager |
       | salesmanager17@info.com | kawhi        |
 
-  @AC3
+  @FIDE-1446
   Scenario Outline:  "Please fill out this field" message should be displayed if the password or username is empty
     When users leave on empty  "<user type>" or "<password>" input box
     And user clicks the login button
@@ -57,14 +57,14 @@ Feature: Login Functionality
       |                        |              |
 
 
-    @AC4
+    @FIDE-1447
     Scenario: User should see the password in bullet signs by default
       When users enter the password
       Then users see the password with bullet sign
 
 
-    @AC5
-      Scenario: Verify if the ‘Enter’ key of the keyboard is working correctly on the login page.
+    @FIDE-1448
+    Scenario: Verify if the ‘Enter’ key of the keyboard is working correctly on the login page.
       When users enter the password
       And users enter the username
       And users press the enter keyword

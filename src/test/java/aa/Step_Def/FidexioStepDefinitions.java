@@ -6,6 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 public class FidexioStepDefinitions {
 
@@ -87,10 +88,12 @@ public class FidexioStepDefinitions {
     }
     @When("users press the enter keyword")
     public void users_press_the_enter_keyword() {
+        //driver.findElement(By.id("Value")).sendKeys(Keys.ENTER);
+       fidexioPages.LoginButton.sendKeys(Keys.ENTER);
     }
     @Then("user go to the main page")
     public void user_go_to_the_main_page() {
-        Assert.assertEquals(Driver.getDriver().getTitle(),"#Inbox - Odoo");
+        Assert.assertEquals(Driver.getDriver().getTitle(),"Odoo");
     }
 
 

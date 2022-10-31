@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "aa/Step_Def",
         dryRun = false,
-        tags = "@AC3"
+        tags = "@FIDE-1449"
 
 
 
