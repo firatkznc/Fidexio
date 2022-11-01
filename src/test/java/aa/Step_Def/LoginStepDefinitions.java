@@ -8,7 +8,7 @@ import io.cucumber.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
-public class FidexioStepDefinitions {
+public class LoginStepDefinitions {
 
     FidexioPages fidexioPages = new FidexioPages();
 

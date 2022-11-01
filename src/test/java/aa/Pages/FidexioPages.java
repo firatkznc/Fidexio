@@ -1,5 +1,6 @@
 package aa.Pages;
 
+import aa.Utilities.ConfigurationReader;
 import aa.Utilities.Driver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +26,19 @@ public class FidexioPages {
 
     @FindBy (xpath = "//p[@class='alert alert-danger']")
     public WebElement WrongCredentials;
+
+    @FindBy (xpath = "//a[@data-menu=\"logout\"]")
+    public WebElement LogoutButton;
+
+    @FindBy (xpath = "//div[@class='o_dialog_warning modal-body']")
+    public WebElement AfterStepBackButton;
+
+    public void login(){
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        UsernameInput.sendKeys(ConfigurationReader.getProperty("username1"));
+        PasswordInput.sendKeys(ConfigurationReader.getProperty("password1"));
+        LoginButton.click();
+    }
 
 
 
