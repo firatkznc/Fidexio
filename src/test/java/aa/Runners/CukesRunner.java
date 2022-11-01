@@ -15,7 +15,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "aa/Step_Def",
         dryRun = false,
-        tags = "@FIDE-1449"
+        tags = "@Logout"
 
 
 
