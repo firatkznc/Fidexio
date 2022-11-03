@@ -41,6 +41,13 @@ public class FidexioPages {
     }
 
 
+    public void loginUsers(String userNameStr, String passwordStr) {
+        UsernameInput.sendKeys(userNameStr);
+        PasswordInput.sendKeys(passwordStr);
+        LoginButton.click();
+        // verification that we logged
+    }
+
 
 
 

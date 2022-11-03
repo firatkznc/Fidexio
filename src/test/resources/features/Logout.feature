@@ -8,7 +8,7 @@
     2- The user can not go to the home page again by clicking the step back button after successfully logged out.
 
     Background: Users are already on the main page after login to the page successfully
-      Given user is already on the home page
+      Given the user logged in as "posmanager"
 
       Scenario: User can log out and ends up in login page.
         When user clicks the username module on the right upper
