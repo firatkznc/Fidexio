@@ -1,6 +1,7 @@
 package aa.Step_Def;
 
 import aa.Pages.FidexioPages;
+import aa.Utilities.ConfigurationReader;
 import aa.Utilities.Driver;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,11 +11,26 @@ import org.junit.Assert;
 public class LogoutStepDefinitions {
 
     FidexioPages fidexioPages = new FidexioPages();
-    @Given("user is already on the home page")
-    public void user_is_already_on_the_home_page() {
-        fidexioPages.login();
+    @Given("the user logged in as {string}")
+    public void theUserLoggedInAs(String userType) {
+
+        Driver.getDriver().get(ConfigurationReader.getProperty("url"));
+        //based on input enter that user information
+        String username =null;
+        String password =null;
+
+        if(userType.contains("posmanager")){
+            username = ConfigurationReader.getProperty("posUsername");
+            password = ConfigurationReader.getProperty("posPassword");
+        }else if(userType.contains("salesmanager")){
+            username = ConfigurationReader.getProperty("salesUsername");
+            password = ConfigurationReader.getProperty("salesPassword");
+        }
+        //send username and password and login
+       fidexioPages.loginUsers(username,password);
 
     }
+
     @When("user clicks the username module on the right upper")
     public void user_clicks_the_username_module_on_the_right_upper() {
         fidexioPages.VerifyUser.click();
@@ -42,5 +58,6 @@ public class LogoutStepDefinitions {
         fidexioPages.AfterStepBackButton.getText();
 
     }
+
 
 }
